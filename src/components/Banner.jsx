@@ -1,8 +1,9 @@
 import banner from '../assets/banner.png'
 import { motion } from 'framer-motion';
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const Banner = () => {
+    const navigate = useNavigate()
     return (
         <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -44,11 +45,12 @@ const Banner = () => {
                     </motion.p>
 
                     <motion.button
+                        onClick={() => navigate('/product')}
                         initial={{ opacity: 0, y: 30, scale: 0.9 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-                        className='bg-red-500 hover:bg-[#002fff] text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg transition duration-300 drop-shadow-[0_0_12px_rgba(255,0,0,0.6)]'
+                        className='bg-red-500 hover:bg-[#002fff] text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg transition duration-300 drop-shadow-[0_0_12px_rgba(255,0,0,0.6)] cursor-pointer'
                     >
                         Shop Now
                     </motion.button>
