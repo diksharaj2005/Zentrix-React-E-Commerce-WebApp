@@ -29,7 +29,7 @@ const Category = () => {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         viewport={{ once: true }}
                     >
-                        <button className='uppercase bg-gradient-to-r from-pink-700 to-yellow-500 text-white px-3 py-1 rounded-b-md cursor-pointer border-black-2' onClick={() => navigate(`/category/${item}`)}>
+                        <button onClick={() => navigate(`/category/${item}`)} className='uppercase bg-gradient-to-r from-pink-700 to-yellow-500 text-white px-3 py-1 rounded-b-md cursor-pointer border-black-2' >
                             {item}
                         </button>
                     </motion.div>

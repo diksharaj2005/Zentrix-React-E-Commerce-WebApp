@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 import { FaCaretDown } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
-import { SignedIn, SignInButton, SignedOut, UserButton } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
 import { div } from 'framer-motion/client';
 import { CgClose } from 'react-icons/cg';
 import { useCart } from '../context/Cartget';
@@ -100,12 +100,24 @@ const Navbar = ({ location, forLocation, openDetect, setOpenDetect }) => {
                         <IoCartOutline className='h-7 w-7 ' />
                         <span className='bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white'>{cartItem.length}</span>
                     </Link>
-                    <div className='hidden md:block'>
+                    <div className="hidden md:block">
                         <SignedOut>
-                            <SignInButton className='bg-red-600 text-white py-1 px-3 rounded-md cursor-pointer font-serif' />
+                            <Link
+                                to="/sign-in"
+                                className="bg-red-600 text-white py-1 px-3 rounded-md cursor-pointer font-serif w-full text-center block"
+                            >
+                                Sign In
+                            </Link>
                         </SignedOut>
+
                         <SignedIn>
-                            <UserButton />
+                            <UserButton
+                                appearance={{
+                                    elements: {
+                                        avatarBox: "w-10 h-10",
+                                    },
+                                }}
+                            />
                         </SignedIn>
                     </div>
                     {

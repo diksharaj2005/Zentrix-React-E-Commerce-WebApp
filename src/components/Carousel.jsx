@@ -47,7 +47,7 @@ const Carousel = () => {
     };
 
     return (
-        <div className='relative -z-30'>
+        <div className='relative '>
             {(!data || data.length === 0) ? (
                 <div className="flex justify-center items-center h-[550px] bg-white">
                     <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
@@ -57,7 +57,7 @@ const Carousel = () => {
                     {
                         data?.slice(0, 7)?.map((item, index) => {
                             return (
-                                <div key={index} className='bg-gradient-to-r from-[#fb73d7] via-[#f634a5] to-[#f90760] '>
+                                <div key={index} className='bg-gradient-to-r from-[#fb73d7] via-[#f634a5] to-[#f90760] -z-10'>
                                     <div className="flex flex-col md:flex-row gap-10 justify-center  h-[600px] md:h-[500px] my-30 md:my-0 p-4">
                                         <div className="md:space-y-7 space-y-3">
                                             <motion.h3

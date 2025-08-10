@@ -12,7 +12,7 @@ import Footer from './components/Footer'
 import SingleProdutPage from './pages/SingleProdutPage'
 import { useCart } from './context/Cartget'
 import ProtectRoute from './components/ProtectRoute'
-
+import SignInPage from './pages/SingInPage'
 const App = () => {
   const [location, setLocation] = useState()
   const [openDetect, setOpenDetect] = useState(false)
@@ -67,7 +67,7 @@ const App = () => {
         <Route path='/product' element={<Product />} />
         <Route path='/product/:id' element={<SingleProdutPage />} />
         <Route path='/category/:category' element={<CategoryProd />} />
-
+        <Route path="/sign-in" element={<SignInPage />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/cart' element={

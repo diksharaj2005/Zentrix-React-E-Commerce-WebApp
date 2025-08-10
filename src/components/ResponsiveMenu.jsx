@@ -1,8 +1,10 @@
-import { UserButton, useUser } from '@clerk/clerk-react';
+import { useUser } from '@clerk/clerk-react';
 import React from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+
+import { SignedIn, SignInButton, SignedOut, UserButton } from '@clerk/clerk-react';
 
 const menuVariants = {
     hidden: { x: "-100%", opacity: 0 },
@@ -84,7 +86,29 @@ const ResponsiveMenu = ({ openNavbar, setOpenNavbar }) => {
                                     );
                                 })}
                             </ul>
+                            <div className="mt-10">
+                                <SignedOut>
+                                    <Link
+                                        to="/sign-in"
+                                        className="bg-red-600 text-white py-1 px-3 rounded-md cursor-pointer font-serif w-full text-center block"
+                                    >
+                                        Sign In
+                                    </Link>
+                                </SignedOut>
+
+                                <SignedIn>
+                                    {/* <UserButton
+                                        appearance={{
+                                            elements: {
+                                                avatarBox: "w-10 h-10",
+                                            },
+                                        }}
+                                    /> */}
+                                </SignedIn>
+                            </div>
+
                         </nav>
+
                     </div>
 
                     <button
